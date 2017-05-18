@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HelloWorldComponent = (function () {
-    function HelloWorldComponent() {
+var WelcomeContainer = (function () {
+    function WelcomeContainer() {
     }
-    return HelloWorldComponent;
+    return WelcomeContainer;
 }());
-HelloWorldComponent = __decorate([
+WelcomeContainer = __decorate([
     core_1.Component({
-        selector: 'hello',
-        template: '<app-bar></app-bar><welcome-container>Hello World</welcome-container>'
+        selector: 'welcome-container',
+        template: "\n\t\t<welcome>\n\t\t\tHello, You are Welcome!\n\t\t</welcome>\n\t"
     })
-], HelloWorldComponent);
-exports.HelloWorldComponent = HelloWorldComponent;
-//# sourceMappingURL=helloworld.component.js.map
+], WelcomeContainer);
+exports.WelcomeContainer = WelcomeContainer;
+//# sourceMappingURL=welcome-container.js.map
