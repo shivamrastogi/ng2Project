@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var helloworld_component_1 = require("./helloworld.component");
 var welcome_container_1 = require("./containers/welcome-container");
 var welcome_1 = require("./containers/welcome");
+var note_container_1 = require("./containers/note-container");
 var index_1 = require("./ui/index");
 var AppModule = (function () {
     function AppModule() {
@@ -24,7 +25,9 @@ AppModule = __decorate([
             helloworld_component_1.HelloWorldComponent,
             welcome_container_1.WelcomeContainer,
             welcome_1.Welcome,
-            index_1.AppBar
+            index_1.AppBar,
+            index_1.NoteCard,
+            note_container_1.NoteContainer
         ],
         bootstrap: [helloworld_component_1.HelloWorldComponent]
     })

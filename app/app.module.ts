@@ -3,7 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HelloWorldComponent} from './helloworld.component';
 import {WelcomeContainer} from './containers/welcome-container';
 import {Welcome} from './containers/welcome';
-import {AppBar} from './ui/index';
+import {NoteContainer} from './containers/note-container';
+import {AppBar, NoteCard} from './ui/index';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import {AppBar} from './ui/index';
 	HelloWorldComponent,
 	WelcomeContainer,
 	Welcome,
-	AppBar
+	AppBar,
+	NoteCard,
+	NoteContainer
 	],
 	bootstrap : [HelloWorldComponent]
 	

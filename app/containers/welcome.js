@@ -15,7 +15,7 @@ var Welcome = (function () {
 Welcome = __decorate([
     core_1.Component({
         selector: 'welcome',
-        template: "bro"
+        template: "<note-container></note-container>"
     })
 ], Welcome);
 exports.Welcome = Welcome;
