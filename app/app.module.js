@@ -10,10 +10,9 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var helloworld_component_1 = require("./helloworld.component");
-var welcome_container_1 = require("./containers/welcome/welcome-container");
-var welcome_1 = require("./containers/welcome/welcome");
+var index_1 = require("./containers/welcome/index");
 var note_container_1 = require("./containers/note-container");
-var index_1 = require("./ui/index");
+var index_2 = require("./ui/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,14 +23,16 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
         declarations: [
             helloworld_component_1.HelloWorldComponent,
-            welcome_container_1.WelcomeContainer,
-            welcome_1.Welcome,
-            index_1.AppBar,
-            index_1.NoteCard,
+            index_1.WelcomeContainer,
+            index_1.Welcome,
+            index_2.AppBar,
+            index_2.NoteCard,
             note_container_1.NoteContainer,
-            index_1.NoteCreator
+            index_2.NoteCreator
         ],
-        bootstrap: [helloworld_component_1.HelloWorldComponent]
+        bootstrap: [
+            helloworld_component_1.HelloWorldComponent
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;
