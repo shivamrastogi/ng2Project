@@ -9,8 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var helloworld_component_1 = require("./helloworld.component");
-var welcome_container_1 = require("./containers/welcome-container");
-var welcome_1 = require("./containers/welcome");
+var welcome_container_1 = require("./containers/welcome/welcome-container");
+var welcome_1 = require("./containers/welcome/welcome");
 var index_1 = require("./ui/index");
 var AppModule = (function () {
     function AppModule() {

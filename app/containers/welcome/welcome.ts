@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
 	template : "bro"
 })
 export class Welcome {
-
+	
 }
