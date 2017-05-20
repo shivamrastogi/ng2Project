@@ -15,7 +15,7 @@ var HelloWorldComponent = (function () {
 HelloWorldComponent = __decorate([
     core_1.Component({
         selector: 'hello',
-        template: '<app-bar></app-bar><welcome-container>Hello World</welcome-container>'
+        template: "\n\t<app-bar>\n\t</app-bar>\n\t<welcome-container>\n\t</welcome-container>"
     })
 ], HelloWorldComponent);
 exports.HelloWorldComponent = HelloWorldComponent;
