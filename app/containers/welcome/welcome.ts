@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
 	template : "<note-container></note-container>"
 })
 export class Welcome {
-
+	
 }

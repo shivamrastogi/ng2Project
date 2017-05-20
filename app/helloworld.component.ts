@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WelcomeContainer} from './containers/welcome-container';
+import {WelcomeContainer} from './containers/welcome';
 
 @Component({
 	selector : 'hello',
