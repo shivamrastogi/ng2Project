@@ -28,7 +28,8 @@ AppModule = __decorate([
             index_2.AppBar,
             index_2.NoteCard,
             note_container_1.NoteContainer,
-            index_2.NoteCreator
+            index_2.NoteCreator,
+            index_2.ColorPicker
         ],
         bootstrap: [
             helloworld_component_1.HelloWorldComponent

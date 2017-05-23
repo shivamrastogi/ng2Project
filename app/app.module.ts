@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HelloWorldComponent } from './helloworld.component';
 import { Welcome, WelcomeContainer } from './containers/welcome/index';
 import {NoteContainer} from './containers/note-container';
-import {AppBar, NoteCard, NoteCreator} from './ui/index';
+import {AppBar, NoteCard, NoteCreator, ColorPicker} from './ui/index';
 
 
 
 @NgModule({
-	imports : [BrowserModule, FormsModule],
+	imports : [BrowserModule, FormsModule, HttpModule],
 	declarations : [
 	HelloWorldComponent,
 	WelcomeContainer,
@@ -17,11 +18,12 @@ import {AppBar, NoteCard, NoteCreator} from './ui/index';
 	AppBar,
 	NoteCard,
 	NoteContainer,
-	NoteCreator
+	NoteCreator,
+	ColorPicker
 	],
 	bootstrap: [
 		HelloWorldComponent
-		]
+	]
 
 })
 export class AppModule {
