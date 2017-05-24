@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var NoteCreator = (function () {
     function NoteCreator() {
-        this.createdNote = new core_1.EventEmitter();
-        this.colors = ['#B19CD9', '#FF6961', '#77DD77'];
+        this.createNote = new core_1.EventEmitter();
+        this.colors = ['#B19CD9', '#FF6961', '#77DD77', '#AEC6CF', '#F49AC2', 'white'];
         this.newNote = {
             title: '',
             value: '',
@@ -21,13 +21,13 @@ var NoteCreator = (function () {
         };
         this.fullForm = false;
     }
-    NoteCreator.prototype.onCreatedNote = function () {
-        var _a = this.newNote, title = _a.title, value = _a.value;
+    NoteCreator.prototype.onCreateNote = function () {
+        var _a = this.newNote, title = _a.title, value = _a.value, color = _a.color;
         if (title && value) {
-            this.createdNote.next(this.newNote);
+            this.createNote.next({ title: title, value: value, color: color });
         }
         this.reset();
-        this.toggle(false);
+        this.fullForm = false;
     };
     NoteCreator.prototype.reset = function () {
         this.newNote = {
@@ -47,12 +47,12 @@ var NoteCreator = (function () {
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
-], NoteCreator.prototype, "createdNote", void 0);
+], NoteCreator.prototype, "createNote", void 0);
 NoteCreator = __decorate([
     core_1.Component({
         selector: 'note-creator',
-        styles: ["\n\t\t.note-creator {\n\t      padding: 20px;\n\t      background-color: white;\n\t      border-radius: 3px;\n\t    }\n\t    .title {\n\t      font-weight: bold;\n\t      color: rgba(0,0,0,0.8);\n\t    }\n\t    .full {\n\t      height: 100px;\n\t    }\n\t"],
-        template: "\n\t\t<div class=\"note-creator shadow-2\" [ngStyle]=\"{'background-color' : newNote.color}\">\n\t      <form class=\"row\" (submit)=\"onCreatedNote()\">\n\t        <input\n\t          type=\"text\"\n\t          [(ngModel)]=\"newNote.title\"\n\t          name=\"newNoteTitle\"\n\t          placeholder=\"Title\"\n\t          class=\"col-xs-10 title\"\n\t          *ngIf=\"fullForm\"\n\t        >\n\t        <input\n\t          type=\"text\"\n\t          [(ngModel)]=\"newNote.value\"\n\t          (focus)=\"toggle(true)\"\n\t          name=\"newNoteValue\"\n\t          placeholder=\"Take a note...\"\n\t          class=\"col-xs-10\"\n\t        >\n\t        <div class=\"actions col-xs-12 row between-xs\" *ngIf=\"fullForm\">\n\t          <div class=\"col-xs-3\">\n\t          \t<color-picker\n\t          \t[colors]=\"colors\"\n\t          \t(selected)=\"onColorSelect($event)\"></color-picker>\n\t          </div>\n\t          <button\n\t            type=\"submit\"\n\t            class=\"btn-light\"\n\t           >\n\t            Done\n\t          </button>\n\t        </div>\n\t      </form>\n\t    </div>"
+        styles: ["\n    .note-creator {\n      padding: 20px;\n      background-color: white;\n      border-radius: 3px;\n    }\n    .title {\n      font-weight: bold;\n      color: rgba(0,0,0,0.8);\n    }\n    .full {\n      height: 100px;\n    }\n  "],
+        template: "\n    <div class=\"note-creator shadow-2\" [ngStyle]=\"{'background-color': newNote.color}\">\n      <form class=\"row\" (ngSubmit)=\"onCreateNote()\">\n        <input\n          type=\"text\"\n          (focus)=\"toggle(true)\"\n          [(ngModel)]=\"newNote.title\"\n          name=\"newNoteTitle\"\n          placeholder=\"Title\"\n          class=\"col-xs-10 title\"\n          *ngIf=\"fullForm\"\n        >\n        <input\n          type=\"text\"\n          (focus)=\"toggle(true)\"\n          [(ngModel)]=\"newNote.value\"\n          name=\"newNoteValue\"\n          placeholder=\"Take a note...\"\n          class=\"col-xs-10\"\n        >\n        <div class=\"actions col-xs-12 row between-xs\" *ngIf=\"fullForm\">\n          <div class=\"col-xs-3\">\n            <color-picker\n              (selected)=\"onColorSelect($event)\"\n              [colors]=\"colors\"\n            >\n            </color-picker>\n          </div>\n          <button\n            type=\"submit\"\n            class=\"btn-light\"\n           >\n            Done\n          </button>\n        </div>\n      </form>\n    </div>\n  "
     })
 ], NoteCreator);
 exports.NoteCreator = NoteCreator;

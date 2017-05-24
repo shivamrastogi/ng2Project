@@ -20,8 +20,8 @@ var ColorPicker = (function () {
         this.isSelectorVisible = value;
     };
     ColorPicker.prototype.selectColor = function (color) {
-        this.selected.next(color);
         this.showSelector(false);
+        this.selected.next(color);
     };
     return ColorPicker;
 }());
@@ -36,8 +36,8 @@ __decorate([
 ColorPicker = __decorate([
     core_1.Component({
         selector: 'color-picker',
-        styles: ["\n\t\t.color-selector {\n\t      position: relative;\n\t    }\n\t    .selector {\n\t      min-width: 120px;\n\t      border: 1px solid lightgrey;\n\t      padding: 10px;\n\t      background-color: #efefef;\n\t      position: absolute;\n\t      top: -50px;\n\t      left: 0;\n\t    }\n\t    .color {\n\t      height: 30px;\n\t      width: 30px;\n\t      border-radius: 100%;\n\t      cursor: pointer;\n\t      margin-right: 10px;\n\t      margin-bottom: 10px;\n\t    }\n\t    .color:hover {\n\t      border: 2px solid darkgrey;\n\t    }\n\t    .icon {\n\t      font-size: 1.4rem;\n\t      color: grey;\n\t      cursor: pointer;\n\t    }\n\t"],
-        template: "<div class=\"color-selector\">\n\t\t  <i (click) = showSelector(true) class=\"material-icons icon\">color_lens</i>\n\t\t  <div class=\"selector row center-xs\" *ngIf=\"isSelectorVisible\">\n\t\t    <div class=\"color\" *ngFor=\"let color of colors\" (click)=\"selectColor(color)\" [ngStyle]=\"{'background-color' : color}\"></div>\n\t\t  </div>\n\t\t</div>"
+        styles: ["\n    .color-selector {\n      position: relative;\n    }\n    .selector {\n      min-width: 120px;\n      border: 1px solid lightgrey;\n      padding: 10px;\n      background-color: #efefef;\n      position: absolute;\n      top: -50px;\n      left: 0;\n    }\n    .color {\n      height: 30px;\n      width: 30px;\n      border-radius: 100%;\n      cursor: pointer;\n      margin-right: 10px;\n      margin-bottom: 10px;\n    }\n    .color:hover {\n      border: 2px solid darkgrey;\n    }\n    .icon {\n      font-size: 1.4rem;\n      color: grey;\n      cursor: pointer;\n    }\n  "],
+        template: "\n    <div class=\"color-selector\">\n      <i (click)=\"showSelector(true)\" class=\"material-icons icon\">color_lens</i>\n      <div class=\"selector row center-xs\" *ngIf=\"isSelectorVisible\">\n        <div\n          class=\"color\"\n          *ngFor=\"let color of colors\"\n          [ngStyle]=\"{'background-color': color}\"\n          (click)=\"selectColor(color)\"\n        >\n        </div>\n      </div>\n    </div>\n  "
     })
 ], ColorPicker);
 exports.ColorPicker = ColorPicker;

@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HelloWorldComponent = (function () {
-    function HelloWorldComponent() {
+var About = (function () {
+    function About() {
     }
-    return HelloWorldComponent;
+    return About;
 }());
-HelloWorldComponent = __decorate([
+About = __decorate([
     core_1.Component({
-        selector: 'hello',
-        template: "\n\t<app-bar>\n\t</app-bar>\n\t<welcome-container>\n\t</welcome-container>"
+        selector: 'about-container',
+        template: "\n    <div class=\"about-container\">\n      <h1>about page</h1>\n    </div>\n  "
     })
-], HelloWorldComponent);
-exports.HelloWorldComponent = HelloWorldComponent;
-//# sourceMappingURL=helloworld.component.js.map
+], About);
+exports.About = About;
+//# sourceMappingURL=about.js.map

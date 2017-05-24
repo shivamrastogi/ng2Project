@@ -9,10 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var helloworld_component_1 = require("./helloworld.component");
-var index_1 = require("./containers/welcome/index");
-var note_container_1 = require("./containers/note-container");
-var index_2 = require("./ui/index");
+var http_1 = require("@angular/http");
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+var app_1 = require("./app");
+var index_1 = require("./app/containers/index");
+var index_2 = require("./app/ui/index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,21 +21,26 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
         declarations: [
-            helloworld_component_1.HelloWorldComponent,
-            index_1.WelcomeContainer,
-            index_1.Welcome,
+            app_1.App,
+            index_1.Main,
             index_2.AppBar,
             index_2.NoteCard,
-            note_container_1.NoteContainer,
+            index_1.Notes,
             index_2.NoteCreator,
-            index_2.ColorPicker
+            index_2.ColorPicker,
+            index_1.About
         ],
-        bootstrap: [
-            helloworld_component_1.HelloWorldComponent
-        ]
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            app_1.routes
+        ],
+        providers: app_1.providers,
+        bootstrap: [app_1.App]
     })
 ], AppModule);
 exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
+//# sourceMappingURL=main.js.map

@@ -15,8 +15,8 @@ var AppBar = (function () {
 AppBar = __decorate([
     core_1.Component({
         selector: 'app-bar',
-        template: "\n\t\t<header class=\"app-bar row middle-xs\">\n\t\t  <span class=\"logo col-xs-10\">\n\t\t    Retain\n\t\t  </span>\n\t\t  <nav class=\"col-xs-2\">\n\t\t    <div class=\"row middle-xs between-xs\">\n\t\t      <span class=\"link\">Settings</span>\n\t\t      <span class=\"link\">signout</span>\n\t\t    </div>\n\t\t  </nav>\n\t\t</header>\n\t",
-        styles: ["\n\t\t.app-bar {\n\t\t  height: 65px;\n\t\t  padding: 5px 30px;\n\t\t  background-color: #00BCD4;\n\t\t}\n\t\t.logo {\n\t\t  color: white;\n\t\t  font-size: 30px;\n\t\t  font-weight: 300;\n\t\t  cursor: pointer;\n\t\t}\n\t\t.link {\n\t\t  color: white;\n\t\t  font-size: 24px;\n\t\t  font-weight: 400;\n\t\t  cursor: pointer; \n\t\t}\n\t"]
+        styles: ["\n    .app-bar {\n      height: 65px;\n      padding: 5px 30px;\n      background-color: #00BCD4;\n    }\n    .logo {\n      color: white;\n      font-size: 30px;\n      font-weight: 300;\n      cursor: pointer;\n    }\n    .link {\n      color: white;\n      font-size: 24px;\n      font-weight: 400;\n      cursor: pointer;\n    }\n  "],
+        template: "\n    <header class=\"app-bar row middle-xs\">\n      <span [routerLink]=\"['']\" class=\"logo col-xs-10\">\n        Retain\n      </span>\n      <nav class=\"col-xs-2\">\n        <div class=\"row middle-xs between-xs\">\n          <span [routerLink]=\"['', 'about']\" class=\"link\">About</span>\n          <span class=\"link\">signout</span>\n        </div>\n      </nav>\n    </header>\n  "
     })
 ], AppBar);
 exports.AppBar = AppBar;

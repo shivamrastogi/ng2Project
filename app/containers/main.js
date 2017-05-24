@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var Welcome = (function () {
-    function Welcome() {
+var Main = (function () {
+    function Main() {
     }
-    return Welcome;
+    return Main;
 }());
-Welcome = __decorate([
+Main = __decorate([
     core_1.Component({
-        selector: 'welcome',
-        template: "<note-container></note-container>"
+        selector: 'main-container',
+        template: "\n    <div class=\"main-container\">\n      <app-bar></app-bar>\n      <main class=\"main\">\n         <router-outlet></router-outlet>\n      </main>\n    </div>\n  "
     })
-], Welcome);
-exports.Welcome = Welcome;
-//# sourceMappingURL=welcome.js.map
+], Main);
+exports.Main = Main;
+//# sourceMappingURL=main.js.map

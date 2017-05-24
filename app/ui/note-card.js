@@ -15,12 +15,12 @@ var NoteCard = (function () {
         this.note = {};
         this.checked = new core_1.EventEmitter();
         this.showCheck = false;
-        this.onChecked = function () {
-            this.checked.next(this.note);
-        };
     }
     NoteCard.prototype.toggleCheck = function () {
         this.showCheck = !this.showCheck;
+    };
+    NoteCard.prototype.onChecked = function () {
+        this.checked.next(this.note);
     };
     return NoteCard;
 }());
@@ -35,8 +35,8 @@ __decorate([
 NoteCard = __decorate([
     core_1.Component({
         selector: 'note-card',
-        styles: ["\n\t\t.note-card {\n\t\t  padding: 15px;\n\t\t  border-radius: 2px;\n\t\t  width: 100%;\n\t\t  position: relative;\n\t\t}\n\t\t.title {\n\t\t  font-size: 1.2rem;\n\t\t  font-weight: bold;\n\t\t  text-align: left;\n\t\t  color: rgba(0,0,0,0.8);\n\t\t}\n\t\t.value {\n\t\t  text-align: left;\n\t\t  font-size: 1.4rem;\n\t\t  font-weight: 200;\n\t\t}\n\t\t.icon {\n\t\t  position: absolute;\n\t\t  color: black;\n\t\t  border: 1px solid lightgrey;\n\t\t  background-color: white;\n\t\t  font-size: 30px;\n\t\t  top: -10px;\n\t\t  left: -10px;\n\t\t  width: 40px;\n\t\t  height: 40px;\n\t\t  border-radius: 100%;\n\t\t  cursor: pointer; \n\t\t}\n\t"],
-        template: "\n\t\t<div class=\"note-card row shadow-1\"\n\t\t\t(mouseleave)=\"toggleCheck()\"\n\t\t\t(mouseenter)=\"toggleCheck()\" [ngStyle]=\"{'background-color' : note.color}\">\n\t\t  <div\n\t\t   class=\"icon\" \n\t\t   (click)=\"onChecked()\"\n\t\t   *ngIf=\"showCheck\"\n\t\t   >\n\t\t    <i class=\"material-icons\">check</i>\n\t\t  </div>\n\t\t  <div class=\"col-xs-12 title\">\n\t\t    {{ note.title }}\n\t\t  </div>\n\t\t  <div class=\"col-xs-12 value\">\n\t\t    {{ note.value }}\n\t\t  </div>\n\t\t</div>\n\t"
+        styles: ["\n    .note-card {\n      padding: 15px;\n      border-radius: 2px;\n      width: 100%;\n      position: relative;\n      margin-bottom: 20px;\n    }\n    .title {\n      font-size: 1.2rem;\n      font-weight: bold;\n      text-align: left;\n      color: rgba(0,0,0,0.8);\n    }\n    .value {\n      text-align: left;\n      font-size: 1.4rem;\n      font-weight: 200;\n    }\n    .icon {\n      position: absolute;\n      color: black;\n      border: 1px solid lightgrey;\n      background-color: white;\n      font-size: 30px;\n      top: -10px;\n      left: -10px;\n      width: 40px;\n      height: 40px;\n      border-radius: 100%;\n      cursor: pointer;\n    }\n  "],
+        template: "\n    <div\n      class=\"note-card row shadow-1\"\n      [ngStyle]=\"{'background-color': note.color}\"\n      (mouseenter)=\"toggleCheck()\"\n      (mouseleave)=\"toggleCheck()\"\n    >\n      <div class=\"icon\" *ngIf=\"showCheck\" (click)=\"onChecked()\">\n        <i class=\"material-icons\">check</i>\n      </div>\n      <div class=\"col-xs-12 title\">\n        {{ note.title }}\n      </div>\n      <div class=\"col-xs-12 value\">\n        {{ note.value }}\n      </div>\n    </div>\n  "
     })
 ], NoteCard);
 exports.NoteCard = NoteCard;
